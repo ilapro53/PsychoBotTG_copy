@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тревожные сообщения</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>🚨 Краснофлаговые сообщения</h2>
+    {% if alerts %}
+        <ul>
+        {% for alert in alerts %}
+            <li><strong>Пользователь:</strong> {{ alert.user_id }}<br>
+                <strong>Сообщение:</strong> {{ alert.message }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет тревожных сообщений.</p>
+    {% endif %}
+</body>
+</html>
